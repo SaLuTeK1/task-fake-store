@@ -28,6 +28,7 @@ const Header: FC<IProps> = () => {
     };
 
     useEffect(() => {
+        dispatch(productsActions.setSearchTrigger(searchQuery))
         dispatch(productsActions.setSearchedProducts(filteredProducts))
     }, [searchQuery]);
 

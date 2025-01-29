@@ -12,7 +12,7 @@ const HomePage: FC<IProps> = () => {
     const [minRating, setMinRating] = useState<number>(0);
 
     const dispatch = useAppDispatch();
-    const {products, selectedCategories, searchProducts} = useAppSelector(state => state.products);
+    const {products, selectedCategories, searchProducts, searchTrigger} = useAppSelector(state => state.products);
 
     useEffect(() => {
         dispatch(productsActions.getAll());
@@ -43,6 +43,10 @@ const HomePage: FC<IProps> = () => {
 
     if (products.length === 0) {
         return <h2>Loading...</h2>;
+    }
+    console.log(searchProducts);
+    if (searchTrigger && searchProducts.length === 0){
+        return <h2>Nothing found</h2>
     }
 
     return (

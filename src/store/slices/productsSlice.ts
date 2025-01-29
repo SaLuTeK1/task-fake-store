@@ -6,7 +6,7 @@ import {AxiosError} from "axios";
 interface IState {
     products: IProduct[]
     searchProducts: IProduct[]
-    searchTrigger:boolean
+    searchTrigger: string
     categories: string[]
     selectedCategories:string[]
 }
@@ -14,7 +14,7 @@ interface IState {
 const initialState: IState = {
     products: [],
     searchProducts:[],
-    searchTrigger:false,
+    searchTrigger:'',
     categories: [],
     selectedCategories:[],
 };
@@ -57,8 +57,8 @@ const productsSlice = createSlice({
     name: "productsSlice",
     initialState,
     reducers: {
-        setSearchTrigger:(state)=>{
-            state.searchTrigger = !state.searchTrigger
+        setSearchTrigger:(state,action)=>{
+            state.searchTrigger = action.payload
         },
         setSelectedCategories:(state,action)=>{
             state.selectedCategories = action.payload
