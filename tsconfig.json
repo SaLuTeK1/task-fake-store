@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Яка версія JS має генеруватися
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Доступні бібліотеки (DOM для браузера)
+    "allowJs": true,                          // Дозволяє використання JS-файлів
+    "skipLibCheck": true,                     // Пропуск перевірки типів у node_modules
+    "esModuleInterop": true,                  // Забезпечує сумісність із модулями CommonJS
+    "strict": true,                           // Увімкнути суворий режим TypeScript
+    "forceConsistentCasingInFileNames": true, // Забороняє розбіжності у регістрі шляху
+    "module": "ESNext",                       // Використання сучасного імпорту ES
+    "moduleResolution": "Node",              // Резолюція модулів у стилі Node.js
+    "resolveJsonModule": true,                // Дозволяє імпортувати JSON
+    "isolatedModules": true,
+    "strictNullChecks": false,
+    "noEmit": true,                           // Не створювати вихідних файлів
+    "jsx": "react-jsx",                       // Використання нового JSX (React 17+)
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*"]
+    }
+  },
+  "include": ["src"],                         // Каталог, який містить файли TypeScript
+  "exclude": ["node_modules"],
+}
